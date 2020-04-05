@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  hello-luigi:
+    image: hello-go
+    container_name: ${TAG}_sd_luigi
+    environment:
+      - HELLO_GO=mario
+      - SERVICE_NAME=mario
+      - SERVICE_TAGS=${TAG}
+
+  hello-mario:
+    image: hello-go
+    container_name: ${TAG}_sd_mario
+    environment:
+      - HELLO_GO=luigi
+      - SERVICE_NAME=luigi
+      - SERVICE_TAGS=${TAG}
+
+  hello-peach:
+    image: hello-go
+    container_name: ${TAG}_sd_peach
+    environment:
+      - HELLO_GO=peach
+      - SERVICE_NAME=peach
+      - SERVICE_TAGS=${TAG}
